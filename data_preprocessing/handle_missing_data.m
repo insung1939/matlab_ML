@@ -3,15 +3,6 @@
 % Check for missing data
 missing_data = ismissing(data);
 
-% Display the presence of missing data
-if any(missing_data(:))
-    disp('Missing data detected!');
-    disp('Indices of missing data:');
-    disp(find(missing_data));
-else
-    disp('No missing data found.');
-end
-
 % Count missing values for each column
 missing_per_column = sum(missing_data);
 
@@ -29,7 +20,7 @@ end
 
 disp('Missing values replaced with column means.');
 
-% 확인
+% Review
 missing_data_after = ismissing(data);
 if any(missing_data_after(:))
     disp('Missing data still detected after replacement.');

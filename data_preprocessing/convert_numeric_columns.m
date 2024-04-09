@@ -1,12 +1,14 @@
+% Convert categorical columns to numeric columns
+
 % Check if all columns are numeric or not.
 
 nonNumericColumns = {};
 
 for i = 1:width(data)
-    % 현재 컬럼의 데이터 타입 확인
+    % Current column data type check
     currentColumnType = class(data{:, i});
     
-    % 컬럼 타입이 숫자형이 아닌 경우, 컬럼 이름을 배열에 추가
+    % Add non-numeric column to nonNumericColumns
     if ~ismember(currentColumnType, {'double', 'single', 'int8', 'uint8', 'int16', 'uint16', 'int32', 'uint32', 'int64', 'uint64'})
         nonNumericColumns{end+1} = data.Properties.VariableNames{i};
     end

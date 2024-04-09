@@ -47,4 +47,3 @@ end
 % Check edited table 
 disp('Modified data table after removing high VIF predictors:');
 disp(data.Properties.VariableNames);
-

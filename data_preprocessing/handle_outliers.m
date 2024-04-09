@@ -43,7 +43,7 @@ data_without_onehot = data{:, 1:28};
 z_scores = zscore(data_without_onehot);
 
 % Define threshold for outlier detection
-threshold = 3; % Adjust as needed
+threshold = 3; 
 
 % Identify outliers
 outliers = abs(z_scores) > threshold;
