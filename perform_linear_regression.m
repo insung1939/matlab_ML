@@ -2,7 +2,7 @@
 
 % Split the data into training and test sets
 rng(915); % Fix the random seed
-cv = cvpartition(size(final_data, 1), 'HoldOut', 0.25);
+cv = cvpartition(size(final_data, 1), 'HoldOut', 0.2);
 idxTrain = cv.training;
 idxTest = cv.test;
 
@@ -18,13 +18,13 @@ mdl = fitlm(X_train, y_train);
 % Predict on the test data
 y_pred = predict(mdl, X_test);
 
-% Model evaluation: Calculate RSE, R-squared, and MAE
-RSE = sqrt(sum((y_test - y_pred).^2) / (size(X_test,1) - size(X_test,2) - 1));
+% Model evaluation: Calculate MSE, R-squared, and MAE
+MSE = mean((y_test - y_pred).^2);
 R_squared = mdl.Rsquared.Ordinary;
 MAE = mean(abs(y_test - y_pred));
 
 % Print the results
-disp(['Residual Standard Error (RSE): ', num2str(RSE)]);
+disp(['MSE: ', num2str(MSE)]);
 disp(['R-squared: ', num2str(R_squared)]);
 disp(['Mean Absolute Error (MAE): ', num2str(MAE)]);
 
@@ -42,5 +42,3 @@ y = max([y_test; y_pred]);
 plot([x y], [x y], 'r--');
 legend('Predictions', 'Perfect Fit Line');
 hold off;
-
-
