@@ -11,3 +11,5 @@ perform_linear_regression;
 
 % Task 3: Build a second model
 perform_second_model;
+
+% tests
