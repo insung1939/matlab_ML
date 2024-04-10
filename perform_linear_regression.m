@@ -25,8 +25,8 @@ MAE = mean(abs(y_test - y_pred));
 
 % Print the results
 disp(['MSE: ', num2str(MSE)]);
-disp(['R-squared: ', num2str(R_squared)]);
-disp(['Mean Absolute Error (MAE): ', num2str(MAE)]);
+disp(['MAE: ', num2str(MAE)]);
+disp(['R² Score: ', num2str(R_squared)]);
 
 % Visualization: Scatter plot of actual vs predicted energy consumption
 figure;
