@@ -1,13 +1,13 @@
-% Main Scirpt
+% Main Script
 
 % Data Load
-load_data;
+load_data; 
 
 % Task 1: Data Cleaning
-data_cleaning;
+data_cleaning; 
 
 % Task 2: Build a linear regression model
-perform_linear_regression;
+perform_linear_regression; 
 
-% Task 3: Build a Artificial Neural Network model
-perform_ANN_model;
+% Task 3: Build an Artificial Neural Network model
+perform_ANN_model; 

@@ -64,4 +64,4 @@ for i = 1:size(data_without_onehot, 2)
     data_without_onehot(:, i) = column_data; % Update corrected data
 end
 
-disp('Outliers replaced with column means.');
+disp('Outliers replaced with column means.'); % Display completion message

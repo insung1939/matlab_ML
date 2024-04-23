@@ -1,11 +1,10 @@
 % Convert categorical columns to numeric columns
 
-% Check if all columns are numeric or not.
-
+% Check if all columns are numeric or not.
 nonNumericColumns = {};
 
 for i = 1:width(data)
-    % Current column data type check
+    % Check the data type of the current column
     currentColumnType = class(data{:, i});
     
     % Add non-numeric column to nonNumericColumns
@@ -18,26 +17,26 @@ end
 % Transform columns which are not numeric using one hot encoding
 
 for i = 1:length(nonNumericColumns)
-    % current column name
+    % Get the current column name
     columnName = nonNumericColumns{i};
     
-    % Transform current column to categorical column.
+    % Transform the current column to a categorical column
     categoricalColumn = categorical(data.(columnName));
-    % Get the category names for the current column.
+    % Get the category names for the current column
     categoryNames = categories(categoricalColumn);
     
-    % Transform categorical column to one-hot-encoding.
+    % Transform the categorical column to one-hot-encoding
     ohc = onehotencode(categoricalColumn, 2);
     
-    % Add new data to orignal data
+    % Add new data to the original data
     for j = 1:size(ohc, 2)
-        % new column name
+        % Get the new column name
         newColName = sprintf('%s_%s', columnName,categoryNames{j});
         data.(newColName) = ohc(:, j);
     end
     
-    % delete the column which is not numeric.
+    % Delete the column which is not numeric.
     data.(columnName) = [];
 end
 
-disp('Conversion completed. Non-numeric columns have been one-hot encoded.');
+disp('Conversion completed. Non-numeric columns have been one-hot encoded.'); % Display completion message

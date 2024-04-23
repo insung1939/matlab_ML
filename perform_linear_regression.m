@@ -18,7 +18,7 @@ mdl = fitlm(X_train, y_train);
 % Predict on the test data
 y_pred = predict(mdl, X_test);
 
-% Model evaluation: Calculate MSE, R-squared, and MAE
+% Model evaluation: Calculate MSE, R-squared, and MAE
 MSE = mean((y_test - y_pred).^2);
 R_squared = mdl.Rsquared.Ordinary;
 MAE = mean(abs(y_test - y_pred));

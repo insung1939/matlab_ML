@@ -1,3 +1,5 @@
+% Perform Artificial Neural Network (ANN) Model Script
+
 % Prepare the data
 features = final_data; % Feature data
 targets = target; % Target data

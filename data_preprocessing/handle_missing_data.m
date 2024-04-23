@@ -18,7 +18,7 @@ for i = 1:size(data, 2)
     end
 end
 
-disp('Missing values replaced with column means.');
+disp('Missing values replaced with column means.'); % Display completion message
 
 % Review
 missing_data_after = ismissing(data);

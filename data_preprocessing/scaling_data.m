@@ -7,4 +7,4 @@ standardizedData = (data - mu) ./ sigma;
 standardizedData = table2array(standardizedData);
 final_data = standardizedData;
 
-disp('Data scaling completed')
+disp('Data scaling completed'); % Display completion message

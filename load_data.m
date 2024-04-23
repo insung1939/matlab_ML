@@ -1,16 +1,16 @@
-% Dataset Load script
+% Dataset Load Script
 
-filename = 'household_energy_data.csv';
+filename = 'household_energy_data.csv'; % File name of the dataset
 
-% csv file load using readtable
+% Load the csv file using readtable
 data = readtable(filename);
 
-% Store target varible
+% Store the target variable
 target = data{:, 1};
 
-% Store data including all features
+% Store the data including all features
 data = data(:, 2:end);
 
-% data size check
+% Check the size of the data
 disp(size(data));
-disp('Data Load Success!!!');
+disp('Data Load Success!!!'); % Display success message for data loading
