@@ -18,15 +18,22 @@ mdl = fitlm(X_train, y_train);
 % Predict on the test data
 y_pred = predict(mdl, X_test);
 
-% Model evaluation: Calculate MSE, R-squared, and MAE
+% Model evaluation: Calculate MSE, R-squared, and MAE
 MSE = mean((y_test - y_pred).^2);
 R_squared = mdl.Rsquared.Ordinary;
 MAE = mean(abs(y_test - y_pred));
 
 % Print the results
-disp(['MSE: ', num2str(MSE)]);
-disp(['MAE: ', num2str(MAE)]);
-disp(['R² Score: ', num2str(R_squared)]);
+disp('Linear Regression Model Performance:');
+disp(['Mean Squared Error (MSE): ', num2str(MSE)]);
+disp(['Mean Absolute Error (MAE): ', num2str(MAE)]);
+disp(['R-squared (R²) Score: ', num2str(R_squared)]);
+
+% Interpretation of results
+disp('Interpretation of Results:');
+disp('The linear regression model has been trained and evaluated.');
+disp('The MSE, MAE, and R-squared values provide insights into the model performance.');
+disp('A lower MSE and MAE indicate better accuracy, while a higher R-squared value indicates a better fit of the model to the data.');
 
 % Visualization: Scatter plot of actual vs predicted energy consumption
 figure;

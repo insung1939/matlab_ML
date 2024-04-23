@@ -29,16 +29,22 @@ net.trainFcn = 'trainlm'; % Levenberg-Marquardt optimization
 % Use Deep Learning Toolbox
 YPred = net(XTest');
 
-% Evaluate performance (e.g., MSE, MAE, and R² Score)
+% Evaluate performance (e.g: MSE, MAE, and R² Score)
 mseValue = perform(net, YTest', YPred);
 maeValue = mean(abs(YPred - YTest'));
 r2Value = 1 - sum((YPred - YTest').^2) / sum((YTest' - mean(YTest')).^2);
 
 % Display performance metrics
-disp('Test Set Performance:');
-disp(['MSE: ', num2str(mseValue)]);
-disp(['MAE: ', num2str(maeValue)]);
-disp(['R² Score: ', num2str(r2Value)]);
+disp('Artificial Neural Network (ANN) Model Performance:');
+disp(['Mean Squared Error (MSE): ', num2str(mseValue)]);
+disp(['Mean Absolute Error (MAE): ', num2str(maeValue)]);
+disp(['R-squared (R²) Score: ', num2str(r2Value)]);
+
+% Interpretation of results
+disp('Interpretation of Results:');
+disp('The artificial neural network (ANN) model has been trained and evaluated.');
+disp('The MSE, MAE, and R-squared values provide insights into the model performance.');
+disp('A lower MSE and MAE indicate better accuracy, while a higher R-squared value indicates a better fit of the model to the data.');
 
 % Visualization of the results
 figure;
